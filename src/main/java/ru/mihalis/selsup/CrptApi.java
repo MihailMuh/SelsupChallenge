@@ -36,8 +36,6 @@ public class CrptApi {
             throw new RuntimeException("Document creating interrupted!");
         }
 
-        System.out.println(timedSemaphore.getAvailablePermits());
-
         try (Response response = postRequest(document).execute()) {
             String body = response.body() != null ? response.body().string() : "";
             if (!response.isSuccessful()) {
